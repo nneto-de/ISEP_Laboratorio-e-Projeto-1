@@ -21,3 +21,8 @@ HTML5 <br>
 CSS3 <br>
 JavaScript <br>
 Visual Studio Code <br>
+
+## **How to view the Project**
+
+1. Clone the repository
+2. open the index.html file in the web browser

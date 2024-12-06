@@ -1,0 +1,307 @@
+/* Estilos básicos para o layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Monospace', cursive;
+  line-height: 1.6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: bisque;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #9A1A24;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+}
+
+header .logo h1 {
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.banner {
+  background: url('banner.jpg') no-repeat center center/cover;
+  height: 150px;
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner h2 {
+  font-size: 2.5em;
+}
+
+.content-section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+.footer-image {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; 
+}
+
+footer img {
+  width: 200px; 
+  height: auto;
+}
+
+.seccao-home .home-categorias {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.listagem-item-produto-categoria {
+  background-color: #f3f2f2;
+  border: solid 1px #dfdede;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin: 0.3rem;
+}
+
+.mx-auto {
+  margin: auto !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: block;
+}
+
+.centered-image {
+  display: block;
+  margin: 30px auto; /* This centers the image horizontally */
+  padding: 30px 0; /* Adds 30px padding on the top and bottom */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pt-4 {
+  padding-top: 1.5rem !important;
+}
+
+.teaser {
+  padding-bottom: 1rem;
+}
+
+.input-group {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #9A1A24;
+  border: 1px solid #9A1A24;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .input-group {
+      width: 80%;
+  }
+
+  .banner h2 {
+      font-size: 2em;
+  }
+
+  .form-control {
+      font-size: 1rem;
+  }
+}
+
+.col-sm-6{
+  align-content: center;
+  text-align: center;
+  background-color: #f3f2f2;
+  margin: 0.3rem;
+  flex: 0 0 25%;
+  max-width: 15%;
+  margin-top: 1rem;
+}
+
+#rowQuemSomos{
+  margin-right: 100px;
+  margin-left: 100px;
+  font-size: larger;
+}
+
+#rowNossaEquipa{
+  margin-right: 100px;
+  margin-left: 100px;
+  font-size: larger;
+}
+
+ #fotoPerfil{
+  border-radius: 50%;
+ }
+
+ /* Dropdown Login Styling */
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 10px; /* Align to the right side of the header */
+  top: 60px; /* Position below the header */
+  background-color: #ffffff;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.dropdown-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content label {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.dropdown-content input[type="text"],
+.dropdown-content input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.dropdown-content .btn-primary {
+  background-color: #9A1A24;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content .btn-primary:hover {
+  background-color: #b2222e;
+}
+
+/* Adjust positioning and responsiveness for small screens */
+@media (max-width: 768px) {
+  .dropdown-content {
+      right: 5px;
+      top: 50px;
+      min-width: 200px;
+  }
+}
+
+/* Registar Button Styles */
+.btn-register {
+  color: #333;
+  background-color: #f3f2f2;
+  border: 1px solid #dfdede;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-register:hover {
+  background-color: #e0e0e0;
+}
+
+/* Sair Dropdown Styles (same as login dropdown) */
+#sairDropdown {
+  display: none; /* Initially hidden */
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  background-color: #ffffff;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 10;
+  text-align: center;
+}

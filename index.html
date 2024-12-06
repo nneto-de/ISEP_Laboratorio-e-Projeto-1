@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+	<title>TradeWithMe</title>
+	<link rel="stylesheet" href="tradewithme.css">
+	<script src="tradewithme.js" defer></script>
+</head>
+
+<body>
+
+	<header>
+		<div class="logo">
+			<h1>TradeWithMe</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#QuemSomos">Sobre</a></li>
+				<li><a href="#contacts">Contacto</a></li>
+				<li>
+					<a id="Login" href="#" onclick="toggleDropdown()">Iniciar Sessão</a>
+					<!-- Dropdown Login Form -->
+					<div id="loginDropdown" class="dropdown-content">
+						<form action="#" method="post" onsubmit="return loginUser()">
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username" class="form-control" required>
+							
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password" class="form-control" required>
+							
+							<button type="submit" class="btn-primary">Entrar</button>
+							<button type="button" id="registerButton" onclick="showRegisterMessage()" class="btn-register">Registar</button>
+						</form>
+					</div>
+					<!-- Dropdown for "Sair" button -->
+					<div id="sairDropdown" class="dropdown-content" style="display: none;">
+						<button type="button" onclick="logOutUser()" class="btn-primary">Sair</button>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<section class="banner">
+		<h2 style="margin-top: 40px;">Bem-vindo ao Portal TradeWithMe</h2>
+	</section>
+
+	<div style="justify-content: center;padding-bottom: 60px;" class="row"><a href="#"><img class="" width="200px" height="200px" loading="lazy"
+		 src="images\tradeWithMe_logo.jpg" alt="logo"></a></div>
+
+
+	<main>
+		<div class="home-categorias link-neutro" style="text-align: center;">
+			<h2 class="text-center"> Anuncie aqui os seus produtos excedentários:</h2>
+			<div class="row no-gutters" style="justify-content: center;">
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\fruta.jpg" alt="Fruta"></a></div>
+						<div class="titulo"><a href="#">Fruta</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\horticolas.jpg"
+									alt="Hortícolas"></a></div>
+						<div class="titulo"><a href="#">Hortícolas</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\leguminosas.jpg" alt="Leguminosas"></a>
+						</div>
+						<div class="titulo"><a href="#">Leguminosas</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\flores.jpg" alt="Flores"></a>
+						</div>
+						<div class="titulo"><a href="#">Flores</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\ovos.jpg"
+									alt="Ovas &amp; Ovos"></a></div>
+						<div class="titulo"><a href="#"> Ovos</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img class="img-fluid rounded-circle mx-auto d-block"
+									width="200px" height="200px" loading="lazy" src="images\leite.jpg"
+									alt="Leites Vegetais"></a></div>
+						<div class="titulo"><a href="#">Leite</a></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+					<div class="listagem-item-produto-categoria link-neutro">
+						<div class="foto"><a href="#"><img width="200px" height="200px"
+									class="img-fluid rounded-circle mx-auto d-block" loading="lazy"
+									title="Todas as Categorias" src="images\toda.png" alt="Todas as Categorias"></a></div>
+						<div class="titulo"><a href="#">Todas as Categorias</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<section>
+		<div class="home-pesquisa pt-4" style="text-align: center;">
+			<h2>Encontre os Produtores Agrícolas Locais, na sua Região!</h2>
+
+			<div class="input-group justify-content-center"><input class="form-control home-pesquisa-text"
+					name="pesquisa" placeholder="procurar produtos" type="text"><button
+					class="btn btn-primary home-pesquisa-btn" type="submit">procurar produtos</button></div>
+
+			<div id="js-pesquisa-vazia-msg"></div>
+
+			<p class="teaser"><b> 1000 </b><a href="#">Produtos Agrícolas</a> | <b>100</b> <a href="#">Produtos
+					Biológicos</a> </p>
+
+		</div>
+	</section>
+	<div class="row">
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\aboboras_todas.jpg" alt="Abóbora diversa"></a></div>
+				<div class="titulo"><a href="#">Abóbora diversa</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura
+						Biológica - </span><span class="local"><a title="Braga » Celorico de Basto" rel="nofollow"
+							href="#">Braga</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\abobora_doce.jpg" alt="Abóbora manteiga"></a></div>
+				<div class="titulo"><a href="#">Abóbora manteiga</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura
+						Biológica - </span><span class="local"><a title="Setúbal » Palmela" rel="nofollow"
+							href="#">Setúbal</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\amendoa_casca.jpg" alt="Amêndoa BIO C/ casca"></a></div>
+				<div class="titulo"><a href="#">Amêndoa C/ casca</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura Biológica -
+					</span><span class="local"><a title="Bragança » Macedo de Cavaleiros" rel="nofollow"
+							href="#">Bragança</a></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\avela_miolo.jpg" alt="Avelãs Bio - miolo"></a></div>
+				<div class="titulo"><a href="#">Avelãs - miolo</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura
+						Biológica - </span><span class="local"><a title="Aveiro » Castelo de Paiva" rel="nofollow"
+							href="#">Aveiro</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\avela.jpg" alt="Avelãs Bio"></a></div>
+				<div class="titulo"><a href="#">Avelãs</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura
+						Biológica - </span><span class="local"><a title="Aveiro » Castelo de Paiva" rel="nofollow"
+							href="#">Aveiro</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\amendoa_casca_dura.jpg" alt="Amêndoa Bio (casca dura)"></a></div>
+				<div class="titulo"><a href="#">Amêndoa (casca dura)</a>
+				</div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy">Agricultura
+						Biológica - </span><span class="local"><a title="Guarda » Figueira de Castelo Rodrigo"
+							rel="nofollow" href="#">Guarda</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4 col-lg-3">
+			<div class="listagem-item-produto">
+				<div class="foto"><a href="#"><img class="img-fluid d-block mx-auto" loading="lazy" width="250px"
+							height="200px" src="images\castanhas.jpg" alt="Castanha de Carrazedo Graúda"></a></div>
+				<div class="titulo"><a href="#">Castanha de Carrazedo
+						Graúda</a></div>
+				<div class="selos"><span class="selo"><img class="img-fluid" loading="lazy"
+							title="">Agricultura Tradicional - </span><span class="local"><a
+							title="Vila Real » Montalegre" rel="nofollow" href="#">Vila Real</a></span></div>
+			</div>
+		</div>
+	</div>
+	<h1 id="titleQuemSomos" style="text-align: center;margin: 30px; ">Quem somos</h1>
+	<div class="row" id="rowQuemSomos">
+		<div class="col-md-8" style="text-align: center;margin-bottom: 30px;" id="QuemSomos">
+			<p> <b> TradeWithMe </b> é uma plataforma de "barter" (escambo) voltada para o setor agrícola, facilitando a
+				troca direta de bens entre pequenos agricultores.</p>
+			<p> Esta interface visa reduzir desperdícios e fortalecer a autonomia das comunidades rurais, criando um
+				sistema que facilita o acesso a alimentos essenciais sem o uso de moeda.</p>
+			<p>O desperdício de alimentos representa uma grande perda de recursos e impacta o meio ambiente com emissões
+				de gases de efeito estufa.
+				Aproximadamente 40% dos produtos cultivados acabam não sendo consumidos, especialmente frutas e legumes.
+			</p>
+			<p>A plataforma visa reduzir esse desperdício promovendo trocas diretas entre produtores, permitindo que
+				excedentes de produção sejam trocados por produtos necessários. </p>
+			<p> Ao conectar diretamente os agricultores, a solução cria um sistema eficiente para destinação de
+				excedentes de produção.
+				A plataforma possibilita a troca direta de produtos agrícolas, eliminando intermediários e custos
+				financeiros. </p>
+			<p> Inclui funcionalidades como agendamento de trocas, sistema de feedback e garantias de negociação,
+				promovendo segurança e eficiência nas transações.</p>
+
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 30px;" id="rowIFrame">
+		<h2><a href="https://www.youtube.com/embed/TIYFja0s-xE" target="iframe_a" onclick="show()">Video de
+				apresentação</a></h2>
+		<iframe src="https://www.youtube.com/embed/TIYFja0s-xE" name="iframe_a" title="Iframe Example" id="iframe"
+			style="display: none; margin-top: 30px;width: 90%;height: 1080px;"></iframe>
+	</div>
+
+	<div style="margin-bottom: 30px;">
+		<h1 style="text-align: center;margin: 30px; ">A nossa equipa</h1>
+		<div class="row" id="rowNossaEquipa">
+			<div class="col-md-8" style="text-align: center;margin-bottom: 30px;" id="NossaEquipa">
+				<p>Este projeto foi desenvolvido no âmbito da unidade curricular de <b>laboratório e Projecto 1 </b>(LAPR1) 
+					do primeiro semestre da <b>licenciatura em Engenharia Informática do Instituto Superior de Engenharia
+					do Porto (ISEP)</b>.
+				</p>
+				<p>A nossa equipa de trabalho, os <b>Scrumbelievables</b>, é constituida pelos seguintes elementos:</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="listagem-item-produto">
+					<div class="fotoPerfil"><a href="https://www.linkedin.com/in/bruno-rafael-santos-259053173/" target="_blank"><img class="img-fluid d-block mx-auto" loading="lazy" width="125px"
+								height="100px" src="images\bruno.jpg" alt="bruno" style="border-radius: 50%;"></a></div>
+					<div class="titulo"><a href="https://www.linkedin.com/in/bruno-rafael-santos-259053173/" target="_blank">Bruno
+							Santos</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="listagem-item-produto">
+					<div class="fotoPerfil"><a href="https://www.linkedin.com/in/cbernardino/" target="_blank"><img class="img-fluid d-block mx-auto" loading="lazy" width="125px"
+								height="100px" src="images\carlos.jpg" alt="carlos" style="border-radius: 50%;"></a></div>
+					<div class="titulo"><a href="https://www.linkedin.com/in/cbernardino/" target="_blank">Carlos Bernadino</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="listagem-item-produto">
+					<div class="fotoPerfil">
+						<img class="img-fluid d-block mx-auto" loading="lazy" width="125px" height="100px" 
+							src="images\martim.jpg" alt="martim" style="border-radius: 50%;">
+					</div>
+					<div class="titulo">
+						<a href="#">Martim Soares</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="listagem-item-produto">
+					<div class="fotoPerfil"><a href="https://www.linkedin.com/in/nunorafaelnetofreitas/" target="_blank" ><img class="img-fluid d-block mx-auto" loading="lazy" width="125px"
+								height="100px" src="images\nuno.jpg" alt="nuno" style="border-radius: 50%;"></a></div>
+					<div class="titulo"><a href="https://www.linkedin.com/in/nunorafaelnetofreitas/" target="_blank">Nuno Freitas</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; 2024 TradeWithMe- Todos os direitos reservados.</p>
+		<div class="social">
+			<a href="#" style="color: #9A1A24;">Facebook</a> | <a href="#" style="color: #9A1A24;">Twitter</a> | <a
+				href="#" style="color: #9A1A24;">LinkedIn</a>
+		</div>
+		<div id="contacts">
+			<p>Email: info@tradewithme.store| Telefone: 252 000 000</p>
+		</div>
+		<div class="footer-image">
+			<img src="images\2023_logo_ISEP.png" alt="Imagem no rodapé" />
+		  </div>
+	</footer>
+</body>
+
+</html>
